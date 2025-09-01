@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>1. 공유된 객체 출력</h2>
+    <div th:text="${member}"></div>
+    <div th:text="${member.id}"></div>
+    <div th:text="${member.pwd}"></div>
+    <div th:text="${member.name}"></div>
+
+    <h2>2. 공유된 list 객체에서 vo를 꺼내서 출력</h2>
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td>비밀번호</td>
+            <td>이름</td>
+        </tr>
+        <tr th:each="m:${list}"> <!-- each 반복문! 부를 변수 명 m-->
+            <td th:text="${m.id}"></td>
+            <td th:text="${m.pwd}"></td>
+            <td th:text="${m.name}"></td>
+        </tr>
+    </table>
+
+    <h3>3. 조건에 따라 값을 출력</h3>
+    <!--
+        list 값을 출력
+        아이디, 비밀번호, 이름, 성인 여부
+        성인 여부 => 나이가 20살 이상이면 성인, 미만이면 미성년자 라고 출력!
+        테이블로 해보기!
+    -->
+
+
+    <table border="1">
+        <tr>
+            <td>아이디</td>
+            <td>비밀번호</td>
+            <td>이름</td>
+            <td>성인 여부</td>
+        </tr>
+        <tr th:each="m:${list}">
+            <td th:text="${m.id}"></td>
+            <td th:text="${m.pwd}"></td>
+            <td th:text="${m.name}"></td>
+
+            <td th:if="${m.age >=20}">성인</td>
+            <td th:unless="${m.age >= 20}">미성년자</td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

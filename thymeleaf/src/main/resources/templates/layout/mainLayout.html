@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html lang="en"
+          xmlns:th="http://www.thymleaf.org"
+          xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> <!-- 메인 레이아웃 역할 하는 곳에 꼭! 적기 -->
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- 시멘틱 태그 : div와 동일한 기능을 하지만, 명시적으로 구분하기 위해 사용! -->
+        <header>
+            <!-- th:block : 논리적 컨테이너(실제로는 존재하지 않음!) 타임리프 로직 묶을 때 사용 -->
+            <th:block th:replace="common/header :: header"></th:block>
+        </header>
+
+        <main>
+            <th:block layout:fragment="content"> <!-- layout: 쓰자마자 상단 html xmlns에 불이 들어옴 : 써야될 땐 무조건 써야하지만 필요 없어도 써둬도 상관 없음-->
+                <!--이 자리는 content라는 조각이 올거라는 뜻-->
+            </th:block>
+            
+        </main>
+
+        <footer>
+            푸터바입니다.
+        </footer>
+    </body>
+    </html>

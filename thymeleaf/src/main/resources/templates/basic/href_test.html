@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2><a th:href="@{/th/text}">th:text 테스트 링크</a></h2> <!-- 동적으로 href 속성 부여-->
+    <h2><a th:href="@{/th/checked}">th:checked 테스트 링크</a></h2>
+    <!-- 막 href_test로 들어왔을 땐 체크 안 되어 있음
+    checked test 를 눌러야 checked 맵핑을 거쳐서 여기서 체크됨-->
+
+    <hr>
+
+    <!-- 체크박스 예제 -->
+    <form action="">
+        <input type="checkbox" name="agree" value="yes" th:checked="${isChecked}">
+
+    </form>
+
+</body>
+</html>

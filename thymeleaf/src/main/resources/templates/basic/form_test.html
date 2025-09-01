@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/th/form" method="post"> <!-- controller post 맵핑을 새로 만들어줘야 함-->
+        <input type="text" name="test1" value="basic" class="myinput" th:name="${data}" th:value="${data}">
+        <input type="text" name="test2" value="basic" class="myinput" th:attrappend="class='_a'">
+        <input type="text" name="test3" value="basic" class="myinput" th:attrprepend="class='a_'">
+        <input type="text" name="test4" value="basic" class="myinput" th:classappend="a">
+
+        <br>
+        <br>
+
+        <input type="checkbox" name="subject" value="java" checked> java
+        <input type="checkbox" name="subject" value="oracle" th:checked="true"> oracle
+        <input type="checkbox" name="subject" value="spring" th:cheched="false"> spring
+
+        <input type="submit" value="서버로 전송하기">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>1. th:text 속성</h1>
+    <p>
+        변수의 값을 해당 태그 내부에 출력함 <br>
+        기존 태그 내용을 완전히 대체한다. <br>
+        XSS(스크립트 공격) 방지 기능이 자동 적용되어 보다 안전하게 처리됨. (닉네임 alert 예시)
+    </p>
+
+    th:text의 사용 : <span th:text="${msg}">text</span> <br>
+    th:text의 사용 : <span th:text="${data}">text</span> <br>
+
+    <h1>2. HTML 텍스트 안에서 직접 사용하는 방식</h1>
+    <p>
+        HTML 안의 문자열 중간에 변수를 삽입할 때 사용
+    </p>
+
+    <h3>문자열과 함께 사용하기: [[${msg}]]</h3>
+    <h3>문자열과 함께 사용하기: [[${data}]]</h3>
+
+</body>
+</html>

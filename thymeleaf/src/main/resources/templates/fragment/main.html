@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>fragement1에 정의된 fragment를 가져와서 연결하기</h1>
+    <div style="background-color:yellow; height:100px">
+        메인의 영역
+    </div>
+
+    <h2>insert / replace</h2>
+    <p>
+        프레그먼트를 삽입(insert), 대체(replace)하는 경우 : ~{} 문법을 써서 경로를 정의하는 것이 기본문법이나 생략 가능 <br>
+        th:insert or th:replace ={연결될view의경로 :: 정의된프레그먼트의이름}
+    </p>
+
+    <div id="top" th:insert="~{fragment/fragment1 :: content1}"></div> <!-- div 안에-->
+
+    <div id="menu" th:replace="~{fragment/fragment1 :: content1}"></div> <!-- 그냥 div 자체로-->
+
+    <div id="menu2" th:replace="fragment/fragment1 :: content1"></div>
+
+    <h2>변수를 넘겨서 사용하기</h2>
+    <div id="result" th:replace="fragment/fragment2 :: content2('차은우','존잘')"></div>
+
+
+</body>
+</html>
