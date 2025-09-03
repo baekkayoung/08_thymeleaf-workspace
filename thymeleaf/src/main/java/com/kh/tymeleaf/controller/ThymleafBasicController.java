@@ -22,6 +22,7 @@ public class ThymleafBasicController {
 
     @GetMapping("/opr")
     public String opTest(){
+
        return "basic/op_test";
     }
 
